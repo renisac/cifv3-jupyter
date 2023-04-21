@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jupyter-cif:
+    build: .
+    container_name: jupyter-cif
+    restart: on-failure
+    ports:
+      - 8888:8888
+    volumes:
+      - ~/.cif.yml:/home/jovyan/.cif.yml
+      - ./storage/work:/home/jovyan/work:z
